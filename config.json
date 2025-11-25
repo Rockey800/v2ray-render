@@ -1,31 +1,16 @@
 {
-  "log": {
-    "loglevel": "warning"
-  },
+  "log": { "loglevel": "warning" },
   "inbounds": [
     {
       "port": 443,
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "id": "2e55cc1d-ebb4-4abd-8bf8-8732a5bc8eca",
-            "alterId": 0
-          }
-        ]
-      },
+      "protocol": "vless",
+      "settings": { "clients": [ { "id": "ba0ac4df-bd04-4ea1-9af0-b32d0adcb11f" } ] },
       "streamSettings": {
         "network": "ws",
-        "wsSettings": {
-          "path": "/zoom-ws"
-        },
-        "security": "none"
+        "wsSettings": { "path": "/zoom-ws", "headers": { "Host": "zoom.us" } },
+        "security": "tls"
       }
     }
   ],
-  "outbounds": [
-    {
-      "protocol": "freedom"
-    }
-  ]
+  "outbounds": [ { "protocol": "freedom" } ]
 }
